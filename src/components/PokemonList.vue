@@ -17,7 +17,7 @@ const totalPages = ref(0)
 // Función para obtener la lista de pokémones
 const fetchPokemons = async () => {
   try {
-    const response = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=151') // Cambiar el límite para tener más opciones
+    const response = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=1000') // Cambiar el límite para tener más opciones
     pokemons.value = response.data.results
     totalPages.value = Math.ceil(pokemons.value.length / pokemonsPerPage)
     filteredPokemons.value = pokemons.value // Inicializamos las sugerencias con todos los Pokémon
